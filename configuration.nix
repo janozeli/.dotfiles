@@ -42,7 +42,8 @@
     isNormalUser = true;
     description = "Janozeli";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+    ];
   };
 
   # Allow unfree packages
@@ -57,39 +58,39 @@ programs.hyprland = {
 };
 
 environment.systemPackages = with pkgs; [
-pkgs.waybar
-pkgs.mako
-pkgs.libnotify
-pkgs.mpvpaper
-pkgs.kitty
-pkgs.wofi
-pkgs.firefox
-pkgs.xfce.thunar
-pkgs.wlogout
-pkgs.swaylock
-pkgs.cliphist
-pkgs.sddm
-pkgs.distrobox
-pkgs.asdf-vm
-pkgs.zsh
-pkgs.zsh-powerlevel10k
-pkgs.git
-pkgs.gh
-pkgs.networkmanagerapplet
-pkgs.spotify
-pkgs.neovim
-pkgs.vimPlugins.LazyVim
-pkgs.mpv
-pkgs.surf
-pkgs.wget
-pkgs.curl
-pkgs.openvpn
-pkgs.openresolv
-pkgs.networkmanager-openvpn
-pkgs.neomutt
-pkgs.dash
-pkgs.zathura
-pkgs.killall
+	pkgs.waybar
+	pkgs.mako
+	pkgs.libnotify
+	pkgs.mpvpaper
+	pkgs.kitty
+	pkgs.wofi
+	pkgs.firefox
+	pkgs.xfce.thunar
+	pkgs.wlogout
+	pkgs.swaylock
+	pkgs.cliphist
+	pkgs.sddm
+	pkgs.distrobox
+	pkgs.asdf-vm
+	pkgs.zsh
+	pkgs.zsh-powerlevel10k
+	pkgs.git
+	pkgs.gh
+	pkgs.networkmanagerapplet
+	pkgs.spotify
+	pkgs.neovim
+	pkgs.mpv
+	pkgs.surf
+	pkgs.wget
+	pkgs.curl
+	pkgs.openvpn
+	pkgs.openresolv
+	pkgs.networkmanager-openvpn
+	pkgs.neomutt
+	pkgs.dash
+	pkgs.zathura
+	pkgs.killall
+	pkgs.meslo-lgs-nf
 ];
 
 hardware = {
@@ -112,13 +113,20 @@ services.pipewire = {
   jack.enable = true;
 };
 
+programs.zsh = { enable = true; promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+	shellAliases = {
+	cc = "clear";
+	".." = "cd ..";
+	};
+	autosuggestions.enable = true;
+};
+
+
 services.flatpak.enable = true;
 services.xserver.enable = true;
 services.xserver.displayManager.sddm.enable = true;
-programs.zsh.enable = true;
 users.defaultUserShell = pkgs.zsh;
 environment.binsh = "${pkgs.dash}/bin/dash";
-programs.zsh.ohMyZsh.enable = true;
 programs.neovim.enable = true;
 services.gvfs.enable = true;
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
