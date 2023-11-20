@@ -71,9 +71,7 @@ environment.systemPackages = with pkgs; [
 	pkgs.cliphist
 	pkgs.sddm
 	pkgs.distrobox
-	pkgs.asdf-vm
 	pkgs.zsh
-	pkgs.zsh-powerlevel10k
 	pkgs.git
 	pkgs.gh
 	pkgs.networkmanagerapplet
@@ -90,7 +88,6 @@ environment.systemPackages = with pkgs; [
 	pkgs.dash
 	pkgs.zathura
 	pkgs.killall
-	pkgs.meslo-lgs-nf
 ];
 
 hardware = {
@@ -113,15 +110,7 @@ services.pipewire = {
   jack.enable = true;
 };
 
-programs.zsh = { enable = true; promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-	shellAliases = {
-	cc = "clear";
-	".." = "cd ..";
-	};
-	autosuggestions.enable = true;
-};
-
-
+programs.zsh.enable = true;
 services.flatpak.enable = true;
 services.xserver.enable = true;
 services.xserver.displayManager.sddm.enable = true;
