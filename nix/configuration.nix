@@ -88,6 +88,7 @@ environment.systemPackages = with pkgs; [
 	pkgs.dash
 	pkgs.zathura
 	pkgs.killall
+	pkgs.stow
 ];
 
 hardware = {
