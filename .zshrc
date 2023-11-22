@@ -10,7 +10,7 @@ bindkey -e
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="~/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 alias szsh="source ~/.zshrc"
 alias cc="clear"
