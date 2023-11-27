@@ -10,7 +10,11 @@ bindkey -e
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="$HOME/.cargo/bin:$PATH"
+. "$HOME/.asdf/asdf.sh"
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
+
+export PATH="$HOME/.asdf/installs/rust/1.74.0/bin:$PATH"
 
 alias szsh="source ~/.zshrc"
 alias cc="clear"
