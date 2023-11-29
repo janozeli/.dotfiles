@@ -16,8 +16,9 @@ autoload -Uz compinit && compinit
 
 export PATH="$HOME/.scripts:$PATH"
 export PATH="$HOME/.asdf/installs/rust/1.74.0/bin:$PATH"
+export PATH="$HOME/.scripts:$PATH"
 
-alias szsh="source ~/.zshrc"
+alias szsh="source $HOME/.zshrc"
 alias zshrc="nvim $HOME/.zshrc"
 alias cc="clear"
 alias ".."="cd .."
