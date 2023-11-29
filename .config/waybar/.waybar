@@ -40,7 +40,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pulseaudio"
+        "on-click": "pavucontrol"
     },
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
