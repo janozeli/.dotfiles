@@ -18,6 +18,7 @@ export PATH="$HOME/.scripts:$PATH"
 
 alias szsh="source $HOME/.zshrc"
 alias zshrc="nvim $HOME/.zshrc"
+alias hyprrc="nvim $HOME/.config/hypr/hyprland.conf"
 alias cc="clear"
 alias ".."="cd .."
 alias ls="eza --header --long --icons --git"
