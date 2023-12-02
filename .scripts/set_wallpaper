@@ -28,3 +28,5 @@ if [ "$INITIAL_COUNT" -ne "$CURRENT_COUNT" ]; then
 	find "$WALLPAPERS_DIR" -type f -not -name '.*' >"$TEXT_FILE"
 	wc -l "$TEXT_FILE" | cut -c 1 >"$INITIAL_COUNT_FILE"
 fi
+
+./change_wallpaper

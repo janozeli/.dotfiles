@@ -18,6 +18,8 @@ export PATH="$HOME/.scripts:$PATH"
 
 alias szsh="source $HOME/.zshrc"
 alias zshrc="nvim $HOME/.zshrc"
+alias waybarrc="nvim $HOME/.config/waybar/.waybar"
+alias waybarrcs="nvim $HOME/.config/waybar/style.css"
 alias hyprrc="nvim $HOME/.config/hypr/hyprland.conf"
 alias cc="clear"
 alias ".."="cd .."

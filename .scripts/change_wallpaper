@@ -1,3 +1,4 @@
+#!/bin/dash
+
 killall mpvpaper
-./set_wallpaper
-nohup mpvpaper -vsp -o "no-audio loop" DP-1 $(cat ~/Wallpapers/.conf/.wallpapers | shuf -n 1) &
+mpvpaper -vspf -o "no-audio loop" DP-1 $(find ~/Wallpapers -type f -not -name '.*' | shuf -n 1) &
