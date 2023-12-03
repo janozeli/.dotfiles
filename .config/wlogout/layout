@@ -10,9 +10,3 @@
     "text" : "Shutdown",
     "keybind" : "s"
 }
-{
-    "label" : "reboot",
-    "action" : "shutdown -r now",
-    "text" : "Reboot",
-    "keybind" : "r"
-}
