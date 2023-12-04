@@ -1,3 +1,6 @@
 #!/bin/dash
 
-nohup mpv -ytdl "$1" &
+video=$(wl-paste)
+
+echo "$video"
+nohup mpv -ytdl "$video" &
