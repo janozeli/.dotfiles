@@ -2,5 +2,4 @@
 
 video=$(wl-paste)
 
-echo "$video"
-nohup mpv -ytdl "$video" &
+nohup mpv "$video" &

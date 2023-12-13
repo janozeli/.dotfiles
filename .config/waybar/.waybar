@@ -9,13 +9,10 @@
     "modules-right": ["pulseaudio", "cpu", "memory", "temperature"],
 
     "hyprland/workspaces": {
-        "format": "{icon}",
+        "format": "{icon} {name}",
         "format-icons": {
-          "1": "1",
-          "2": "2",
-          "3": "3",
-          "4": "4",
-          "5": "5",
+          "active": ">",
+          "default": ""
         },
     },
     "tray": {
