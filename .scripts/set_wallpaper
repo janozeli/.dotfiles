@@ -1,0 +1,32 @@
+#!/bin/dash
+
+WALLPAPERS_DIR=~/Wallpapers
+TEXT_FILE=~/Wallpapers/.conf/.wallpapers
+INITIAL_COUNT_FILE=~/Wallpapers/.conf/.initial_count
+
+if [ ! -f "$TEXT_FILE" ]; then
+	find "$WALLPAPERS_DIR" -type f -not -name '.*' >"$TEXT_FILE"
+	wc -l "$TEXT_FILE" | cut -c 1 >"$INITIAL_COUNT_FILE"
+fi
+
+RANDOM_WALLPAPER=$(shuf -n 1 "$TEXT_FILE")
+
+sed -i "\|$RANDOM_WALLPAPER|d" "$TEXT_FILE"
+
+if [ ! -s "$TEXT_FILE" ]; then
+	find "$WALLPAPERS_DIR" -type f -not -name '.*' >"$TEXT_FILE"
+	wc -l "$TEXT_FILE" | cut -c 1 >"$INITIAL_COUNT_FILE"
+fi
+
+INITIAL_COUNT=0
+if [ -s "$INITIAL_COUNT_FILE" ]; then
+	INITIAL_COUNT=$(cat "$INITIAL_COUNT_FILE")
+fi
+
+CURRENT_COUNT=$(find "$WALLPAPERS_DIR" -type f -not -name '.*' | wc -l)
+if [ "$INITIAL_COUNT" -ne "$CURRENT_COUNT" ]; then
+	find "$WALLPAPERS_DIR" -type f -not -name '.*' >"$TEXT_FILE"
+	wc -l "$TEXT_FILE" | cut -c 1 >"$INITIAL_COUNT_FILE"
+fi
+
+./change_wallpaper

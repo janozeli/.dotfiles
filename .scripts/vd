@@ -1,0 +1,5 @@
+#!/bin/dash
+
+video=$(wl-paste)
+
+nohup mpv "$video" &

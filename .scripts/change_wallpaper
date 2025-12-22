@@ -1,0 +1,4 @@
+#!/bin/dash
+
+killall mpvpaper
+mpvpaper -vspf -o "no-audio loop" '*' $(find ~/Wallpapers -type f -not -name '.*' | shuf -n 1) --mpv-options "--video-aspect-override='16:9' --loop-file=inf"
