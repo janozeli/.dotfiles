@@ -1,4 +1,13 @@
-#!/bin/dash
+#!/usr/bin/env bash
+set -euo pipefail
 
-killall mpvpaper
-mpvpaper -vspf -o "no-audio loop" '*' $(find ~/Wallpapers -type f -not -name '.*' | shuf -n 1) --mpv-options "--video-aspect-override='16:9' --loop-file=inf"
+killall mpvpaper || true
+
+wallpapers_dir="$HOME/Wallpapers"
+wallpaper=$(find "$wallpapers_dir" -type f -not -name '.*' | shuf -n 1)
+if [ -z "$wallpaper" ]; then
+	echo "change_wallpaper: no wallpapers found in $wallpapers_dir" >&2
+	exit 1
+fi
+
+mpvpaper -vspf -o "no-audio loop" '*' "$wallpaper" --mpv-options "--video-aspect-override='16:9' --loop-file=inf"
