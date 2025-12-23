@@ -7,7 +7,7 @@
 ## .dotfiles (desktop)
 - Shell: `.zshrc`, `.zshrc_extend` (from WSL baseline), `.zshrc_desktop` (desktop-only aliases).
 - Git: `.gitconfig`.
-- Editor: none.
+- Editor: `.config/nvim/*` (WSL baseline).
 - Tmux: none.
 - Terminal: `.config/kitty/kitty.conf`.
 - Desktop/Wayland: `.config/hypr/hyprland.conf`, `.config/waybar/*`, `.config/wlogout/*`.
