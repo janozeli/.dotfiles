@@ -9,7 +9,7 @@ This repo is the Arch desktop layer. Common CLI configuration is aligned with `.
 `.zshrc` loads `.zshrc_desktop` when present for desktop-only aliases.
 
 ## Apply
-Use the commands in `docs/VERIFY.md` for a dry-run and apply. The current method is a targeted `rsync` into `$HOME`.
+Use the commands in `docs/VERIFY.md` for a dry-run and apply. The current method is a targeted `rsync` into `$HOME` (requires `rsync`).
 
 ## Desktop vs WSL
 - Desktop: apply everything.

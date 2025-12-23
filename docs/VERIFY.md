@@ -1,5 +1,7 @@
 # Verify
 
+Note: apply steps require `rsync`.
+
 ## Dry-run apply (no changes)
 ```sh
 rsync -avhn \
