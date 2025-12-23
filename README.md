@@ -3,7 +3,7 @@
 This repo is the Arch desktop layer. Common CLI configuration is aligned with `.dotfiles-wsl` and should stay in sync.
 
 ## Scope
-- Common/CLI (from WSL baseline): `.zshrc`, `.zshrc_extend`, `.gitconfig`, `.config/nvim`, `.scripts/gc`.
+- Common/CLI (from WSL baseline): `.zshrc`, `.zshrc_extend`, `.gitconfig`, `.scripts/gc`.
 - Desktop-only: Hyprland/Wayland configs, Waybar/Wlogout, Kitty, Spotifyd, wallpaper scripts.
 
 `.zshrc` loads `.zshrc_desktop` when present for desktop-only aliases.

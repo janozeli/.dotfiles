@@ -25,6 +25,5 @@
 - asdf: https://asdf-vm.com/
 - git: https://git-scm.com/doc
 - GitHub CLI (gh): https://cli.github.com/
-- neovim: https://neovim.io/
 - bat: https://github.com/sharkdp/bat
 - eza: https://github.com/eza-community/eza
