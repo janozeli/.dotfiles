@@ -1,8 +1,8 @@
 # Inventory
 
 ## Apply method detection (.dotfiles)
-- No repo-level README/Makefile/install/bootstrap/chezmoi/stow files detected.
-- Likely manual copy/symlink of files into $HOME (needs explicit docs).
+- `README.md` documents an `rsync`-based apply flow (see `docs/VERIFY.md`).
+- No automated install/bootstrap script detected.
 
 ## .dotfiles (desktop)
 - Shell: `.zshrc`, `.zshrc_extend` (from WSL baseline), `.zshrc_desktop` (desktop-only aliases).

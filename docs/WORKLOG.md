@@ -1,4 +1,8 @@
 2025-12-23T19:42:58-03:00 - Start: update .dotfiles for Arch desktop; WSL is baseline for common/CLI.
+2025-12-23T19:54:20-03:00 - Synced shell baseline from WSL; added optional desktop-only aliases file.
+2025-12-23T19:54:20-03:00 - Synced git config and added Neovim baseline from WSL.
+2025-12-23T19:54:20-03:00 - Hardened local scripts (bash + strict mode) and cleaned Waybar/Hyprland startup.
+2025-12-23T19:54:20-03:00 - Reviewed .dotfiles-old; no additional utilities imported.
 
 Plan:
 - Align common shell files (.zshrc, .zshrc_extend) with .dotfiles-wsl.
