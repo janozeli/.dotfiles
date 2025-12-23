@@ -1,0 +1,7 @@
+# Desktop-specific helper aliases.
+alias waybarrc="nvim $HOME/.config/waybar/.waybar"
+alias waybarrcs="nvim $HOME/.config/waybar/style.css"
+alias hyprrc="nvim $HOME/.config/hypr/hyprland.conf"
+alias wlogoutrc="nvim $HOME/.config/wlogout/layout"
+alias wlogoutrcs="nvim $HOME/.config/wlogout/style.css"
+alias kittyrc="nvim $HOME/.config/kitty/kitty.conf"
