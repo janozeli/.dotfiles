@@ -10,7 +10,7 @@
 - Editor: `.config/nvim/*` (WSL baseline).
 - Tmux: none.
 - Terminal: `.config/kitty/kitty.conf`.
-- Desktop/Wayland: `.config/hypr/hyprland.conf`, `.config/waybar/*`, `.config/wlogout/*`.
+- Desktop/Wayland: `.config/hypr/hyprland.conf`, `.config/waybar/*` (config.jsonc), `.config/wlogout/*`.
 - Audio/streaming: `.config/spotifyd/spotifyd.conf`.
 - Scripts: `.scripts/{change_wallpaper,set_wallpaper,gc,vd}`.
 - Systemd user units: none detected.

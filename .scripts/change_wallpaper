@@ -10,4 +10,4 @@ if [ -z "$wallpaper" ]; then
 	exit 1
 fi
 
-mpvpaper -vspf -o "no-audio loop" '*' "$wallpaper" --mpv-options "--video-aspect-override='16:9' --loop-file=inf"
+mpvpaper -vspf -o "no-audio --loop-file=inf --video-aspect-override=16:9" '*' "$wallpaper"

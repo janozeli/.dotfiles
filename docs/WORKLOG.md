@@ -3,6 +3,7 @@
 2025-12-23T19:54:20-03:00 - Synced git config and added Neovim baseline from WSL.
 2025-12-23T19:54:20-03:00 - Hardened local scripts (bash + strict mode) and cleaned Waybar/Hyprland startup.
 2025-12-23T19:54:20-03:00 - Reviewed .dotfiles-old; no additional utilities imported.
+2025-12-23T20:05:44-03:00 - Reviewed Hyprland/Waybar/mpvpaper docs; aligned Waybar config name and mpvpaper options.
 
 Plan:
 - Align common shell files (.zshrc, .zshrc_extend) with .dotfiles-wsl.
