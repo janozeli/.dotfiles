@@ -18,4 +18,3 @@
 - Wallpaper rotation: `set_wallpaper` maintains a list, but `change_wallpaper` still picks a random file; decide if rotation should use the list strictly.
 - Monitors: refine multi-monitor layout (external-first) and per-model tuning beyond the current auto-detect script.
 - Audio: confirm tray applet (pasystray) is visible and behaving correctly; adjust if needed.
-- TEMP Firmware update: run `sudo fwupdmgr update` on AC power (Secure Boot is disabled). Reboot required; remove this line after successful update.
