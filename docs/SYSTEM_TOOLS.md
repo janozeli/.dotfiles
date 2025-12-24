@@ -45,3 +45,7 @@ This file lists tools referenced directly by dotfiles/configs and scripts.
 - bash, zsh
 - ripgrep (`rg`) for fast search
 - git, gh
+
+## Planned (not wired yet)
+- mako (notifications)
+- cliphist (clipboard history)
