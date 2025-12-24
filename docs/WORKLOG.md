@@ -8,6 +8,7 @@
 2025-12-23T21:02:12-03:00 - Captured system context snapshot; Vulkan access pending.
 2025-12-23T22:08:16-03:00 - Post-install: installed waybar/thunar/playerctl/pavucontrol/fwupd; AUR mpvpaper/spotify/wlogout; base man-db/man-pages/pacman-contrib; blueman + helvum; restic; fonts (Noto + emoji, JetBrainsMono Nerd, FiraCode Nerd, Symbols Nerd, Inter, Monaspace Nerd). Enabled power-profiles-daemon + thermald. Hyprland: fixed config errors, set mainMod SUPER, added monitor auto-detect script + watcher, blueman-applet autostart. Set system-wide fontconfig in /etc/fonts/local.conf and updated kitty/waybar/wlogout fonts. fwupd refresh shows Secure Boot KEK/db updates available.
 2025-12-23T22:23:26-03:00 - Audio UI adjustments: removed helvum + pavucontrol, installed pavucontrol-qt + pasystray, and added pasystray autostart. Applets (blueman + pasystray) started via Hyprland exec to avoid dconf warnings.
+2025-12-23T22:23:26-03:00 - Firmware update planned: Secure Boot KEK/db updates available; Secure Boot is disabled. Will run `fwupdmgr update` on AC power and reboot; remove TODO note after success.
 
 ## System Context Report (2025-12-23)
 Collected live from the current machine to aid setup and troubleshooting.

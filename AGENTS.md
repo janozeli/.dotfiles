@@ -44,3 +44,4 @@ No automated test framework. Use the syntax checks above and manual desktop vali
 
 ## System Context Report
 Latest system snapshot and Vulkan notes live in `docs/INVENTORY.md` and `docs/WORKLOG.md`.
+Current machine model: Samsung NP730QFG-KF1BR.
