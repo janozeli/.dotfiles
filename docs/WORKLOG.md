@@ -10,6 +10,7 @@
 2025-12-23T22:23:26-03:00 - Audio UI adjustments: removed helvum + pavucontrol, installed pavucontrol-qt + pasystray, and added pasystray autostart. Applets (blueman + pasystray) started via Hyprland exec to avoid dconf warnings.
 2025-12-23T22:23:26-03:00 - Firmware update planned: Secure Boot KEK/db updates available; Secure Boot is disabled. Will run `fwupdmgr update` on AC power and reboot; remove TODO note after success.
 2025-12-23T22:42:55-03:00 - Firmware update executed via `fwupdmgr update` (Secure Boot KEK/db). Reboot still required to complete.
+2025-12-23T22:49:53-03:00 - Firmware update confirmed after reboot: UEFI CA updated (2011 → 2023); no pending updates.
 
 ## System Context Report (2025-12-23)
 Collected live from the current machine to aid setup and troubleshooting.
