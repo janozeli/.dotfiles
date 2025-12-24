@@ -13,6 +13,7 @@
 2025-12-23T22:49:53-03:00 - Firmware update confirmed after reboot: UEFI CA updated (2011 → 2023); no pending updates.
 2025-12-24T00:20:53-03:00 - Hyprland: configured keyboard layouts us(altgr-intl), us(intl), br(abnt2) with SUPER+Space toggle (grp:win_space_toggle); applied updated hyprland.conf to ~/.config and reloaded to clear invalid layout popup.
 2025-12-24T01:04:28-03:00 - Audio: aligned Waybar pulseaudio module on-click to pavucontrol-qt; synced tool inventory and cleared audio review TODO item.
+2025-12-24T01:05:05-03:00 - Audio: reverted Waybar on-click to GTK pavucontrol and updated tool inventory to match preference.
 
 ## System Context Report (2025-12-23)
 Collected live from the current machine to aid setup and troubleshooting.
