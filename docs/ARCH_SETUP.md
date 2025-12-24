@@ -1,5 +1,10 @@
 # Arch Setup
 
+## System basics
+- Locale + language: https://wiki.archlinux.org/title/Locale
+- System time/timezone/NTP: https://wiki.archlinux.org/title/System_time
+- Keyboard layout (XKB): https://wiki.archlinux.org/title/Xorg/Keyboard_configuration
+
 ## Desktop stack (Wayland)
 - Hyprland: https://wiki.hyprland.org/
 - Waybar: https://github.com/Alexays/Waybar/wiki

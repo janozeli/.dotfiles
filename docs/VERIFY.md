@@ -30,6 +30,13 @@ bash -n .scripts/* .config/waybar/launch.sh
 zsh -n .zshrc .zshrc_extend .zshrc_desktop
 ```
 
+## Localization checks
+Ensure `localectl status` matches the `input.kb_layout` and `kb_variant` values in `.config/hypr/hyprland.conf`.
+```sh
+localectl status
+timedatectl status
+```
+
 ## Optional checks
 ```sh
 shellcheck -x .scripts/* .config/waybar/launch.sh
