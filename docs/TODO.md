@@ -18,3 +18,6 @@
 - Wallpaper rotation: `set_wallpaper` maintains a list, but `change_wallpaper` still picks a random file; decide if rotation should use the list strictly.
 - Monitors: refine multi-monitor layout (external-first) and per-model tuning beyond the current auto-detect script.
 - Audio: confirm tray applet (pasystray) is visible and behaving correctly; adjust if needed.
+- System language and localization (locale/keyboard/timezone consistency).
+- Theme, icons, and mouse cursor selection/config.
+- Review toolchain synergy: using `docs/SYSTEM_TOOLS.md`, verify the current stack’s cohesion/efficiency and check recent ricing user feedback on solid/stable/coherent stacks to refine if needed.
