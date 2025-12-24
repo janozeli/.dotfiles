@@ -15,6 +15,7 @@
 2025-12-24T01:04:28-03:00 - Audio: aligned Waybar pulseaudio module on-click to pavucontrol-qt; synced tool inventory and cleared audio review TODO item.
 2025-12-24T01:05:05-03:00 - Audio: reverted Waybar on-click to GTK pavucontrol and updated tool inventory to match preference.
 2025-12-24T01:56:49-03:00 - Theme: installed Sweet GTK theme + Candy icons + Sweet hyprcursor, set GTK/Qt config files and Hyprland env for global theming; gsettings writes failed due to dconf permission, so settings.ini is the source of truth.
+2025-12-24T09:53:43-03:00 - Theme: switched cursor to Bibata-Modern-Ice for Xcursor/Hyprcursor and updated GTK settings + Hyprland env; kept Qt on Fusion via qt5ct/qt6ct.
 
 ## System Context Report (2025-12-23)
 Collected live from the current machine to aid setup and troubleshooting.
