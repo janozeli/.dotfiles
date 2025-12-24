@@ -32,7 +32,7 @@ This file lists tools referenced directly by dotfiles/configs and scripts.
 
 ## Waybar modules
 - pulseaudio module (pipewire-pulse)
-- `pavucontrol` on-click (note: current UI is `pavucontrol-qt`)
+- `pavucontrol-qt` on-click
 
 ## Scripts (.scripts)
 - set_monitors: python, hyprctl

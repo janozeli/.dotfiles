@@ -12,6 +12,7 @@
 2025-12-23T22:42:55-03:00 - Firmware update executed via `fwupdmgr update` (Secure Boot KEK/db). Reboot still required to complete.
 2025-12-23T22:49:53-03:00 - Firmware update confirmed after reboot: UEFI CA updated (2011 → 2023); no pending updates.
 2025-12-24T00:20:53-03:00 - Hyprland: configured keyboard layouts us(altgr-intl), us(intl), br(abnt2) with SUPER+Space toggle (grp:win_space_toggle); applied updated hyprland.conf to ~/.config and reloaded to clear invalid layout popup.
+2025-12-24T01:04:28-03:00 - Audio: aligned Waybar pulseaudio module on-click to pavucontrol-qt; synced tool inventory and cleared audio review TODO item.
 
 ## System Context Report (2025-12-23)
 Collected live from the current machine to aid setup and troubleshooting.
