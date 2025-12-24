@@ -18,6 +18,9 @@ This file lists tools referenced directly by dotfiles/configs and scripts.
 - hyprland
 - hyprctl
 - waybar
+- qt5ct
+- qt6ct
+- kvantum
 - nm-applet (network-manager-applet)
 - blueman-applet (blueman)
 - pasystray
