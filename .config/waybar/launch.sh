@@ -1,5 +1,6 @@
-#!/usr/bin/env dash
+#!/usr/bin/env bash
+set -euo pipefail
 
-killall -r 'waybar*'
+killall -r 'waybar*' || true
 
-waybar -c ~/.config/waybar/.waybar
+waybar -c "$HOME/.config/waybar/config.jsonc"

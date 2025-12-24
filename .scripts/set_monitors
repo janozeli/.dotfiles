@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+mode="${1:---apply}"
+runtime_dir="${XDG_RUNTIME_DIR:-/run/user/$UID}"
+pidfile="$runtime_dir/hypr/set_monitors.pid"
+
+apply_layout() {
+  python - <<'PY'
+import json
+import os
+import subprocess
+
+def run(args):
+    subprocess.run(args, check=False)
+
+data = json.loads(subprocess.check_output(["hyprctl", "monitors", "-j"]))
+
+internal = None
+externals = []
+for m in data:
+    name = m.get("name", "")
+    if name.startswith("eDP"):
+        internal = m
+    else:
+        externals.append(m)
+
+preferred_order = ["HDMI-A-1", "HDMI-A-2", "DP-1", "DP-2", "DP-3"]
+chosen = None
+for pref in preferred_order:
+    for m in externals:
+        if m.get("name") == pref:
+            chosen = m
+            break
+    if chosen:
+        break
+if not chosen and externals:
+    chosen = externals[0]
+
+if chosen:
+    name = chosen.get("name")
+    desc = chosen.get("description", "")
+    if "LS24C36" in desc:
+        mode = "1920x1080@60"
+        scale = "1"
+    else:
+        mode = "preferred"
+        scale = "1"
+    run(["hyprctl", "keyword", "monitor", f"{name},{mode},auto,{scale}"])
+    if internal:
+        run(["hyprctl", "keyword", "monitor", f"{internal.get('name')},disable"])
+elif internal:
+    run(["hyprctl", "keyword", "monitor", f"{internal.get('name')},preferred,auto,1.5"])
+PY
+}
+
+watch_events() {
+  python - <<'PY'
+import os
+import socket
+import sys
+
+runtime_dir = os.environ.get("XDG_RUNTIME_DIR", f"/run/user/{os.getuid()}")
+sig = os.environ.get("HYPRLAND_INSTANCE_SIGNATURE", "")
+if not sig:
+    sys.exit(0)
+sock_path = f"{runtime_dir}/hypr/{sig}/.socket2.sock"
+s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+s.connect(sock_path)
+while True:
+    data = s.recv(4096)
+    if not data:
+        break
+    sys.stdout.write(data.decode("utf-8", errors="ignore"))
+    sys.stdout.flush()
+PY
+}
+
+if [[ "$mode" == "--watch" ]]; then
+  mkdir -p "$runtime_dir/hypr"
+  if [[ -f "$pidfile" ]] && kill -0 "$(cat "$pidfile")" 2>/dev/null; then
+    exit 0
+  fi
+  echo $$ >"$pidfile"
+  trap 'rm -f "$pidfile"' EXIT
+
+  apply_layout
+  watch_events | while IFS= read -r line; do
+    case "$line" in
+      monitoradded*|monitorremoved*)
+        apply_layout
+        ;;
+    esac
+  done
+  exit 0
+fi
+
+apply_layout

@@ -1,32 +1,40 @@
-#!/bin/dash
+#!/usr/bin/env bash
+set -euo pipefail
 
-WALLPAPERS_DIR=~/Wallpapers
-TEXT_FILE=~/Wallpapers/.conf/.wallpapers
-INITIAL_COUNT_FILE=~/Wallpapers/.conf/.initial_count
+wallpapers_dir="$HOME/Wallpapers"
+text_file="$wallpapers_dir/.conf/.wallpapers"
+initial_count_file="$wallpapers_dir/.conf/.initial_count"
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
-if [ ! -f "$TEXT_FILE" ]; then
-	find "$WALLPAPERS_DIR" -type f -not -name '.*' >"$TEXT_FILE"
-	wc -l "$TEXT_FILE" | cut -c 1 >"$INITIAL_COUNT_FILE"
+mkdir -p "$(dirname "$text_file")"
+
+if [ ! -f "$text_file" ]; then
+	find "$wallpapers_dir" -type f -not -name '.*' >"$text_file"
+	wc -l <"$text_file" >"$initial_count_file"
 fi
 
-RANDOM_WALLPAPER=$(shuf -n 1 "$TEXT_FILE")
-
-sed -i "\|$RANDOM_WALLPAPER|d" "$TEXT_FILE"
-
-if [ ! -s "$TEXT_FILE" ]; then
-	find "$WALLPAPERS_DIR" -type f -not -name '.*' >"$TEXT_FILE"
-	wc -l "$TEXT_FILE" | cut -c 1 >"$INITIAL_COUNT_FILE"
+random_wallpaper=$(shuf -n 1 "$text_file")
+if [ -z "$random_wallpaper" ]; then
+	echo "set_wallpaper: no wallpapers listed in $text_file" >&2
+	exit 1
 fi
 
-INITIAL_COUNT=0
-if [ -s "$INITIAL_COUNT_FILE" ]; then
-	INITIAL_COUNT=$(cat "$INITIAL_COUNT_FILE")
+sed -i "\|$random_wallpaper|d" "$text_file"
+
+if [ ! -s "$text_file" ]; then
+	find "$wallpapers_dir" -type f -not -name '.*' >"$text_file"
+	wc -l <"$text_file" >"$initial_count_file"
 fi
 
-CURRENT_COUNT=$(find "$WALLPAPERS_DIR" -type f -not -name '.*' | wc -l)
-if [ "$INITIAL_COUNT" -ne "$CURRENT_COUNT" ]; then
-	find "$WALLPAPERS_DIR" -type f -not -name '.*' >"$TEXT_FILE"
-	wc -l "$TEXT_FILE" | cut -c 1 >"$INITIAL_COUNT_FILE"
+initial_count=0
+if [ -s "$initial_count_file" ]; then
+	initial_count=$(cat "$initial_count_file")
 fi
 
-./change_wallpaper
+current_count=$(find "$wallpapers_dir" -type f -not -name '.*' | wc -l)
+if [ "$initial_count" -ne "$current_count" ]; then
+	find "$wallpapers_dir" -type f -not -name '.*' >"$text_file"
+	wc -l <"$text_file" >"$initial_count_file"
+fi
+
+"$script_dir/change_wallpaper"

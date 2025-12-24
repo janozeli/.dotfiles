@@ -1,0 +1,7 @@
+# Desktop-specific helper aliases.
+alias waybarrc='${EDITOR:-vim} $HOME/.config/waybar/config.jsonc'
+alias waybarrcs='${EDITOR:-vim} $HOME/.config/waybar/style.css'
+alias hyprrc='${EDITOR:-vim} $HOME/.config/hypr/hyprland.conf'
+alias wlogoutrc='${EDITOR:-vim} $HOME/.config/wlogout/layout'
+alias wlogoutrcs='${EDITOR:-vim} $HOME/.config/wlogout/style.css'
+alias kittyrc='${EDITOR:-vim} $HOME/.config/kitty/kitty.conf'
