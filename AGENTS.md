@@ -41,3 +41,6 @@ No automated test framework. Use the syntax checks above and manual desktop vali
 ## Security & Configuration Tips
 - Never commit secrets (keys, tokens). If retiring configs, move to `legacy/` and note it in `docs/WORKLOG.md`.
 - Use official documentation links only in `docs/ARCH_SETUP.md`.
+
+## System Context Report
+Latest system snapshot and Vulkan notes live in `docs/INVENTORY.md` and `docs/WORKLOG.md`.
